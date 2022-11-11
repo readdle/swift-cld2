@@ -7,7 +7,10 @@
 //
 
 import Foundation
+
+#if SWIFT_PACKAGE
 import cld2
+#endif
 
 public class LanguageDetector {
     
