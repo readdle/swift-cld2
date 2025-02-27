@@ -36,7 +36,7 @@ public class LanguageDetector {
 
             if lang1 == "en",
                self.isLatinBased(languageCode: lang2),
-               lang2Score > 50 {
+               lang2Score >= 50 {
                 return lang2
             }
         }
