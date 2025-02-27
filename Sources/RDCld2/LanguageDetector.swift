@@ -29,7 +29,7 @@ public class LanguageDetector {
             return nil
         }
 
-        if result.languages.count > 2, result.percents.count > 2 {
+        if result.languages.count >= 2, result.percents.count >= 2 {
             let lang1 = result.languages[0]
             let lang2 = result.languages[1]
             let lang2Score = result.percents[1]
