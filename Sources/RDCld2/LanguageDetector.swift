@@ -25,7 +25,7 @@ public class LanguageDetector {
     }
 
     public class func fuzzyDetectLanguage(string: String, strict: Bool = false, isPlainText: Bool = false) -> String? {
-        guard let result = self.detectLanguage(string: string, strict: strict, isPlainText: false) else {
+        guard let result = self.detectLanguage(string: string, strict: strict, isPlainText: isPlainText) else {
             return nil
         }
 
