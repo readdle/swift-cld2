@@ -55,7 +55,7 @@ public class LanguageDetector {
                 return nil
             }
 
-            let cResult = detectLanguages(dataPtr, Int32(data.count), strict ? 1 : 0, 0)
+            let cResult = detectLanguages(dataPtr, Int32(data.count), strict ? 1 : 0, isPlainText ? 1 : 0)
             defer {
                 CLanguageDetectionResultRelease(cResult)
             }
