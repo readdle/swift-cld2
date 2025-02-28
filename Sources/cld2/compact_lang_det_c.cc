@@ -49,9 +49,22 @@ CLanguageDetectionResult detectLanguages(const char* buffer,
                                             &text_bytes,
                                             &is_reliable,
                                             &validPrefixBytes);
+
+    if (is_reliable == false) {
+        CLD2::DetectLanguageSummary(buffer,
+                buffer_length,
+                (bool)is_plain_text,
+                (bool)strict_mode,
+                langs,
+                percents,
+                &text_bytes,
+                &is_reliable);
+    }
+
     for (int i = 0; i < 3; i++) {
         result[i] = LanguageCode(langs[i]);
     }
+
     struct CLanguageDetectionResult r = {
             result,
             percents,
