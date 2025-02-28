@@ -17,7 +17,7 @@ CLanguageDetectionResult detectLanguages(const char* buffer,
     const char** result = new const char*[3];
 
     // based on detect(PyObject *self, PyObject *args, PyObject *kwArgs)
-    // see: https://githuщ.com/aboSamoor/pycld2/blob/c71aa20a5cb04c93ac434abafea53bd570c9c1dc/bindings/pycldmodule.cc#L60
+    // see: https://github.com/aboSamoor/pycld2/blob/c71aa20a5cb04c93ac434abafea53bd570c9c1dc/bindings/pycldmodule.cc#L60
 
     // cld2 also suggest this function for use
     // see: https://github.com/CLD2Owners/cld2/blob/b56fa78a2fe44ac2851bae5bf4f4693a0644da7b/public/compact_lang_det.h#L274
