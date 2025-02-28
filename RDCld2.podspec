@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RDCld2"
-  s.version      = "1.0.6"
+  s.version      = "1.0.7"
   s.summary      = "Compact Language Detector 2"
   s.homepage     = "https://github.com/readdle/swift-cld2"
   s.license      = { :type => 'Apache License, Version 2.0', :file => 'LICENSE' }
