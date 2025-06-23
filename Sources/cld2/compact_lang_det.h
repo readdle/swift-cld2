@@ -63,6 +63,7 @@
 #define I18N_ENCODINGS_CLD2_PUBLIC_COMPACT_LANG_DET_H_
 
 #include <stdint.h>
+#include <stdio.h>
 #include <vector>
 #include "integral_types.h"   // For uint8 etc.
 #include "lang_script.h"      // For Language
