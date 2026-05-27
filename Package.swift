@@ -9,9 +9,19 @@ let package = Package(
         .library(name: "RDCld2", targets: ["RDCld2"])
     ],
     targets: [
-        .target(name: "cld2"),
+        .target(
+            name: "cld2",
+            cxxSettings: [
+                .define("_CRT_SECURE_NO_WARNINGS", .when(platforms: [.windows])),
+                .unsafeFlags([
+                    "-Wno-c++11-narrowing",
+                    "-Wno-deprecated-declarations",
+                    "-Wno-non-c-typedef-for-linkage",
+                ])
+            ]
+        ),
         .target(name: "RDCld2", dependencies: ["cld2"]),
         .testTarget(name: "RDCld2Tests", dependencies: ["RDCld2"])
     ],
-    cxxLanguageStandard: .cxx98
+    cxxLanguageStandard: .cxx14
 )
