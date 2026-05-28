@@ -1,4 +1,4 @@
-// swift-tools-version:5.4
+// swift-tools-version:6.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -13,11 +13,8 @@ let package = Package(
             name: "cld2",
             cxxSettings: [
                 .define("_CRT_SECURE_NO_WARNINGS", .when(platforms: [.windows])),
-                .unsafeFlags([
-                    "-Wno-c++11-narrowing",
-                    "-Wno-deprecated-declarations",
-                    "-Wno-non-c-typedef-for-linkage",
-                ])
+                .disableWarning("deprecated-declarations"),
+                .disableWarning("non-c-typedef-for-linkage"),
             ]
         ),
         .target(name: "RDCld2", dependencies: ["cld2"]),

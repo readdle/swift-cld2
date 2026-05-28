@@ -7,6 +7,7 @@ Fork of the [cld2](https://github.com/CLD2Owners/cld2) framework. Read about det
 - Added some tweaks to **not exclude detected languages with low probability rate** from the final result (see commits history). Introduced `strict_mode` parameter.  
 - Added [C-wrapper](https://github.com/readdle/swift-cld2/blob/main/Source/cld2/compact_lang_det_c.cc#L13) for [DetectLanguageSummary()](https://github.com/readdle/swift-cld2/blob/main/Source/cld2/compact_lang_det.h#L187).
 - Added [Swift-wrapper](https://github.com/readdle/swift-cld2/blob/main/Source/RDCld2/LanguageDetector.swift#L14) for C-wrapper for DetectLanguageSummary().
+- Windows SwiftPM support required C++14; a few generated/legacy sources now use explicit casts for table initializers because SwiftPM strips `-Wno-c++11-narrowing` for remote packages.
 
 ## License
 
