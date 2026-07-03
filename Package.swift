@@ -1,4 +1,4 @@
-// swift-tools-version:5.4
+// swift-tools-version:6.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -9,9 +9,16 @@ let package = Package(
         .library(name: "RDCld2", targets: ["RDCld2"])
     ],
     targets: [
-        .target(name: "cld2"),
+        .target(
+            name: "cld2",
+            cxxSettings: [
+                .define("_CRT_SECURE_NO_WARNINGS", .when(platforms: [.windows])),
+                .disableWarning("deprecated-declarations"),
+                .disableWarning("non-c-typedef-for-linkage"),
+            ]
+        ),
         .target(name: "RDCld2", dependencies: ["cld2"]),
         .testTarget(name: "RDCld2Tests", dependencies: ["RDCld2"])
     ],
-    cxxLanguageStandard: .cxx98
+    cxxLanguageStandard: .cxx14
 )

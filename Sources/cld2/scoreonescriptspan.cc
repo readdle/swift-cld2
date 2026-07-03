@@ -1149,8 +1149,10 @@ void ScoreEntireScriptSpan(const LangSpan& scriptspan,
   if (scoringcontext->flags_cld2_html) {
     ChunkSummary chunksummary = {
       1, 0,
-      one_one_lang, UNKNOWN_LANGUAGE, score, 1,
-      bytes, 0, scriptspan.ulscript, reliability, reliability
+      static_cast<uint16>(one_one_lang), static_cast<uint16>(UNKNOWN_LANGUAGE),
+      static_cast<uint16>(score), 1,
+      static_cast<uint16>(bytes), 0, static_cast<uint16>(scriptspan.ulscript),
+      static_cast<uint8>(reliability), static_cast<uint8>(reliability)
     };
     CLD2_Debug(scriptspan.text, 1, scriptspan.text_bytes,
                false, false, NULL,
